@@ -20,7 +20,8 @@
      </tr>
 </table>
 <h2>New book</h2>
-<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="WTNbS4cdC2ye52mHeluz8Hroi/RZ8DItoRA2OGPpdWb26N13UBnazCZtHs43pJDTJFo9Ifod7NnvToNzmWP9hA==">
+<form_for(@book, url: '/book') class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post">
+	<input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="WTNbS4cdC2ye52mHeluz8Hroi/RZ8DItoRA2OGPpdWb26N13UBnazCZtHs43pJDTJFo9Ifod7NnvToNzmWP9hA==">
 
   <div class="field">
     <label for="book_title">Title</label>
