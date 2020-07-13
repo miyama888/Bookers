@@ -1,5 +1,9 @@
-<%= flash[:notice] %>
+<% if flash.notice %>
+     <p class = "notice" > <%= flash.notice %></p>
+<% end %>
+
 <h1>Editing Book</h1>
+
 <%= form_for(@book) do |f| %>
 
 	<% if @book.errors.any? %>
@@ -14,13 +18,17 @@
    	 </div>
    	 <% end %>
 
-	<strong>Title:</strong>
-	<%= f.text_field :title %>
-	<strong>Body:</strong>
-	<%= f.text_area :body %>
+  <div class = "field">
+	<label>Title:</label>
+	<%= f.text_field :title %></div>
 
-	 <br><%= f.submit 'Update Book' %></br>
+	<div class = "field">
+  <label>Body:</label>
+	<%= f.text_area :body %></div>
+
+	 <div class = "actions"><%= f.submit 'Update Book' %></div>
 <% end %>
 
 <%= link_to "Show", book_path(@book) %>
-<%= link_to "Back", books_path(@book) %>
+ | 
+<%= link_to "Back", books_path %>
